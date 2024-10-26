@@ -1,0 +1,31 @@
+---
+title: "React Hooks Overview"
+publishedAt: "2024-10-16"
+summary: "Simply the use of all the react issue as it goes"
+category: "react"
+---
+
+# React Hooks Overview
+
+**React Hooks** provide a way to use state and other React features without writing a class.
+
+## Commonly Used Hooks
+
+1. **useState**: Manages state in functional components.
+2. **useEffect**: Handles side effects like fetching data.
+3. **useContext**: Accesses React context directly.
+
+```js
+import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
