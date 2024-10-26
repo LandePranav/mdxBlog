@@ -1,6 +1,9 @@
 import LatestPosts from "@/components/home/latest-posts";
 import { MainNav } from "@/components/home/main-nav";
 import { Container } from "@/components/ui/Container";
+import TopCategories from "@/components/home/TopCategories";
+import PopularPosts from "@/components/home/popular-posts";
+import Footer from "@/components/home/footer";
 
 export default function Home() {
   return (
@@ -15,13 +18,13 @@ export default function Home() {
             <h1 className="uppercase font-bold mb-4">
               Top categories
             </h1>
-            {/* <TopCategories /> */}
+            <TopCategories />
           </div>
           <div className="sticky top-0 mt-10">
             <h1 className="uppercase font-bold mb-4">
               Popular Posts
             </h1>
-            {/* <PopularPosts /> */}
+            <PopularPosts />
           </div>
         </div>
       </main>

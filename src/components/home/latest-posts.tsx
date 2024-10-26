@@ -10,6 +10,7 @@ export default function LatestPosts() {
     })
     return(
         <div>
+            <h1 className="uppercase font-bold underline underline-offset-4 decoration-gray-700 ">Recently Published</h1>
             {latestPosts.map((post)=> (
                 <article key={post.slug} className="text-wrap max-w-md my-10">
                     <Link href={'/#'}>

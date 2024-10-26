@@ -16,33 +16,7 @@ import {
 } from "@/components/ui/navigation-menu"
 import { Icons } from "../ui/icon"
 import { ModeToggle } from "./mode-toggle"
-
-const posts: { title: string; href: string; description: string }[] = [
-  {
-    title: "React",
-    href: "/blogs/react",
-    description:
-      "A brief Overview of React as it is."
-  },
-  {
-    title: "Hooks",
-    href: "/blogs/hooks",
-    description:
-      "All about rHooks"
-  },
-  {
-    title: "RestAPI",
-    href: "/blogs/restapi",
-    description:
-      "All about restapi"
-  },
-  {
-    title: "Styling",
-    href: "/blogs/styling",
-    description:
-      "All about tailwind stylings and css"
-  },
-]
+import { posts } from "@/lib/constants"
 
 export function MainNav({className}:{className?: string}) {
   return (
@@ -51,9 +25,9 @@ export function MainNav({className}:{className?: string}) {
       className
     )}>
       <Link href={"/"}>
-        <div className="flex items-center justify-between w-32">
+        <div className="flex items-center justify-between w-40">
           <Icons.logo />
-          <p>
+          <p className="uppercase text-nowrap">
             Ronin's Lore
           </p>
         </div>
