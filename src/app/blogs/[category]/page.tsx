@@ -14,6 +14,15 @@ export async function generateStaticParams(){
 
 type Params = Promise<{category:string}>;
 
+export async function generateMetadata({params}: {params: Params}){
+    let {category} = await params;
+
+    return{
+        title: category.toLocaleUpperCase(),
+        description: `All articles regarding ${category}`
+    }
+}
+
 export default async function Page({params}: {params: Params}) {
     const {category} = await params;
     let posts = getBlogPosts().filter((post) => post.metadata.category === category)

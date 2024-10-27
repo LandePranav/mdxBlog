@@ -19,7 +19,7 @@ export default function Home() {
             </h1>
             <TopCategories />
           </div>
-          <div className="sticky top-0 mt-10">
+          <div className="sticky top-0 mt-20">
             <h1 className="uppercase font-bold mb-4">
               Popular Posts
             </h1>

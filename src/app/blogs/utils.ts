@@ -28,6 +28,12 @@ function getMdxData(dir: string){
 export function getBlogPosts(){
     return getMdxData(path.join(process.cwd(), 'src', 'app', 'blogs', 'content'));
 }
+export function getTermsOfServices(){
+    return getMdxData(path.join(process.cwd(), 'src', 'app', 'terms-of-services'));
+}
+export function getPrivacyPolicy(){
+    return getMdxData(path.join(process.cwd(), 'src', 'app', 'privacy-policy'));
+}
 
 export function formatDate(date: string, isRelative = true){
     const currDate = new Date();
