@@ -3,14 +3,27 @@ import { getBlogPosts } from "../utils";
 import { Container } from "@/components/ui/Container";
 import CardCategory from "@/components/home/cardCategory";
 import Header from "@/components/ui/header";
+import { notFound } from "next/navigation";
 
-export default function Page({params}: {params: {category:string}}) {
-    let posts = getBlogPosts().filter((post) => post.metadata.category === params.category)
+export async function generateStaticParams(){
+    let posts = getBlogPosts();
+    return posts.map((post) => ({
+        category:post.metadata.category
+    }));
+}
+
+type Params = Promise<{category:string}>;
+
+export default async function Page({params}: {params: Params}) {
+    const {category} = await params;
+    let posts = getBlogPosts().filter((post) => post.metadata.category === category)
     posts.sort((a,b)=> {
         if(new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) return -1;
         return 1;
     })
-    // if(!posts.length) notFound();
+
+    if(!posts.length) notFound();
+
     return(
         <>
             <Header>

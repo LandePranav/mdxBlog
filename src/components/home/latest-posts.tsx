@@ -10,15 +10,15 @@ export default function LatestPosts() {
     })
     return(
         <div>
-            <h1 className="uppercase font-bold underline underline-offset-4 decoration-gray-700 ">Recently Published</h1>
+            <h1 className="uppercase inline-block font-heading tracking-tight font-bold text-3xl lg:text-4xl underline underline-offset-4 decoration-gray-700 ">Recently Published</h1>
             {latestPosts.map((post)=> (
-                <article key={post.slug} className="text-wrap max-w-md my-10">
-                    <Link href={'/#'}>
-                        <h3 className="font-bold py-2 leading-5 hover:text-blue-400">
+                <article key={post.slug} className="text-wrap max-w-md my-10 border-b border-gray-400 dark:border-gray-700 border-opacity-30 pb-10 mr-5 ">
+                    <Link href={`/blogs/${post.metadata.category}/${post.slug}`}>
+                        <h3 className="font-bold text-lg py-2 leading-6 hover:text-blue-400">
                             {post.metadata.title}
                         </h3>
                     </Link>
-                    <p className="leading-8 my-5">
+                    <p className="leading-4 my-5 font-medium">
                         {post.metadata.summary}
                     </p>
                     <p className="text-sm text-gray-500">

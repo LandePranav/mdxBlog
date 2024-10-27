@@ -3,7 +3,6 @@ import { MainNav } from "@/components/home/main-nav";
 import { Container } from "@/components/ui/Container";
 import TopCategories from "@/components/home/TopCategories";
 import PopularPosts from "@/components/home/popular-posts";
-import Footer from "@/components/home/footer";
 
 export default function Home() {
   return (

@@ -69,8 +69,8 @@ export default function Footer() {
                             </p>
                             <form>
                                 <div className="flex flex-col space-y-2 lg:space-y-0 lg:flex-row lg:space-x-2">
-                                    <Input type="email" placeholder="email.." />
-                                    <Button type="submit" className="w-fit lg:w-auto" >
+                                    <Input type="email" placeholder="email.." className="bg-white dark:bg-gray-900" />
+                                    <Button type="submit" className="w-fit lg:w-auto dark:font-semibold" >
                                         Subscribe
                                     </Button>
                                 </div>

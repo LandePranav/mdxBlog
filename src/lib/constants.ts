@@ -13,7 +13,7 @@ export const posts: { title: string; href: string; description: string }[] = [
     },
     {
       title: "RestAPI",
-      href: "/blogs/restapi",
+      href: "/blogs/api",
       description:
         "All about restapi"
     },

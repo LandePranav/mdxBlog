@@ -3,17 +3,29 @@ import { formatDate, getBlogPosts } from "../../utils";
 import { BreadcrumbWithCustomSeparator } from "@/components/home/breadCrumb";
 import { Container } from "@/components/ui/Container";
 import CustomMDX from "@/components/mdx";
+import { notFound } from "next/navigation";
 
-export default function Page({params}: {params: {category:string; slug:string}}) {
-    const post = getBlogPosts().find((post)=> post.slug === params.slug) ;
+export async function generateStaticParams(){
+    let posts = getBlogPosts();
+    return posts.map((post) => ({
+        category:post.metadata.category,
+        slug:post.slug
+    }));
+}
 
-    if(!post) return;
+type Params = Promise<{category:string;slug:string;}>
+
+export default async function Page({params}: {params: Params}) {
+    const {category, slug} = await params;
+    const post = getBlogPosts().find((post)=> post.slug === slug) ;
+
+    if(!post) notFound();
 
     return(
         <>
             <Header>
                 <Container>
-                    <BreadcrumbWithCustomSeparator category={params.category} slug={params.slug} />
+                    <BreadcrumbWithCustomSeparator category={category} slug={slug} />
                     <h1 className="title font-semibold text-2xl tracking-tighter mt-4">
                         {post?.metadata.title}
                     </h1>

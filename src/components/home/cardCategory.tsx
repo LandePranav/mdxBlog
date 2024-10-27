@@ -10,7 +10,7 @@ import {
 
 export default function CardCategory({title,summary,publishedAt}:{title:string; summary:string; publishedAt:string;}) {
     return(
-            <Card className="w-[350px] h-[290px] shadow-lg">
+            <Card className="w-[80%] h-auto mx-auto md:w-full md:mx-0 md:h-[250px] shadow-lg overflow-auto">
                 <CardHeader>
                     <CardTitle>{title}</CardTitle>
                 </CardHeader>
