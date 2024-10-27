@@ -4,6 +4,7 @@ import { BreadcrumbWithCustomSeparator } from "@/components/home/breadCrumb";
 import { Container } from "@/components/ui/Container";
 import CustomMDX from "@/components/mdx";
 import { notFound } from "next/navigation";
+import ReportViews from "@/components/ReportViews";
 
 export async function generateStaticParams(){
     let posts = getBlogPosts();
@@ -23,6 +24,7 @@ export default async function Page({params}: {params: Params}) {
 
     return(
         <>
+            <ReportViews category={post.metadata.category} title={post.metadata.title} slug={post.slug}  />
             <Header>
                 <Container>
                     <BreadcrumbWithCustomSeparator category={category} slug={slug} />
