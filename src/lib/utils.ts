@@ -12,4 +12,5 @@ type ResponseData = {
   title: string;
   slug: string;
 }[];
+
 export const fetcher = (...args: Parameters<typeof fetch>): Promise<ResponseData> => fetch(...args).then(res => res.json());

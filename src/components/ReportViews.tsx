@@ -8,6 +8,7 @@ export default function ReportViews({slug, title, category}: {
     title:string;
     category:string;
 }) {
+    console.log("Inside ReportViews:", slug,title, category)
     useEffect(()=>{
         const postData = async () => {
             try {
@@ -22,11 +23,12 @@ export default function ReportViews({slug, title, category}: {
                 console.log("Something is up.....",error);
             }
         }
+        postData();
     },[category, slug, title])
 
     return(
         <>
-            
+             
         </>
     );
 }
