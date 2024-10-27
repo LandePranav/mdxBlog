@@ -1,7 +1,18 @@
 import { db } from "@/db/index";
 
 export async function GET(){
-    return new Response("Hello ", {status:200});
+    // return new Response("Hello ", {status:200});
+    try {
+        const data =  await db.blog.findMany({
+            take: 10,
+            select: {title:true, category:true, slug:true,},
+            orderBy: [{view_count: 'desc'}],
+        });
+        return Response.json(data);
+    } catch (error) {
+        console.log("Database Error...", error);
+        throw new Error("Failed to fetch popular posts!");
+    }
 }
 
 export async function POST(request: Request) {
