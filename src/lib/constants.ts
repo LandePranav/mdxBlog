@@ -6,16 +6,16 @@ export const posts: { title: string; href: string; description: string }[] = [
         "A brief Overview of React as it is."
     },
     {
-      title: "Hooks",
-      href: "/blogs/hooks",
+      title: "Web3",
+      href: "/blogs/web3",
       description:
-        "All about rHooks"
+        "Into the meta-verse of new tech."
     },
     {
-      title: "RestAPI",
+      title: "API",
       href: "/blogs/api",
       description:
-        "All about restapi"
+        "All about new and trending API's"
     },
     {
       title: "Styling",
