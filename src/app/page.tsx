@@ -9,10 +9,10 @@ export default function Home() {
     <Container>
       <MainNav />
       <main className="flex flex-col items-start justify-evenly mt-16 md:flex-row">
-        <div>
+        <div className="w-2/3">
           <LatestPosts />
         </div>
-        <div className="h-dvh">
+        <div className="h-dvh md:w-1/3">
           <div>
             <h1 className="uppercase font-bold mb-4">
               Top categories

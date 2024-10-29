@@ -51,7 +51,7 @@ export function MainNav({className}:{className?: string}) {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
+          <Link href="https://pranavlande.vercel.app" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               About Me
             </NavigationMenuLink>

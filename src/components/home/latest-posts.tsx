@@ -9,7 +9,7 @@ export default function LatestPosts() {
         return 1;
     })
     return(
-        <div>
+        <div className="font-custom text-[#3c4043]">
             <h1 className="uppercase inline-block font-heading tracking-tight font-bold text-3xl lg:text-4xl underline underline-offset-4 decoration-gray-700 ">Recently Published</h1>
             {latestPosts.map((post)=> (
                 <article key={post.slug} className="text-wrap max-w-md my-10 border-b border-gray-400 dark:border-gray-700 border-opacity-30 pb-10 mr-5 ">
@@ -18,7 +18,7 @@ export default function LatestPosts() {
                             {post.metadata.title}
                         </h3>
                     </Link>
-                    <p className="leading-4 my-5 font-medium">
+                    <p className="leading-4 my-5">
                         {post.metadata.summary}
                     </p>
                     <p className="text-sm text-gray-500">
