@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
   	extend: {
 		fontFamily: {
-			custom:["ui-monospace","SFMono-Regular","Menlo","Monaco","Consolas","Liberation Mono","Courier New","monospace"] ,
+			custom:["JetBrains Mono", "ui-monospace","SFMono-Regular","Menlo","Monaco","Consolas","Liberation Mono","Courier New","monospace"] ,
 		},
   		colors: {
   			background: 'hsl(var(--background))',

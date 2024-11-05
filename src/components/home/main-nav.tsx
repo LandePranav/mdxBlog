@@ -21,23 +21,23 @@ import { posts } from "@/lib/constants"
 export function MainNav({className}:{className?: string}) {
   return (
     <div className={cn(
-      "flex flex-col pt-10 z-50 items-start justify-start md:flex-row md:items-center md:justify-between",
+      "flex flex-col pt-10 z-50 items-center justify-center md:flex-row md:items-center md:justify-between w-[80%] md:w-full mx-auto md:mx-0",
       className
     )}>
       <Link href={"/"}>
-        <div className="flex items-center justify-between w-40">
+        <div className="flex items-center justify-between gap-3">
           <Icons.logo />
-          <p className="uppercase text-nowrap">
+          <p className="uppercase text-nowrap text-lg">
             Ronin's Lore
           </p>
         </div>
       </Link>
-      <NavigationMenu>
+      <NavigationMenu className=" mt-5 md:mt-0">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Posts</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {posts.map((post) => (
                 <ListItem
                   key={post.title}
@@ -59,9 +59,11 @@ export function MainNav({className}:{className?: string}) {
         </NavigationMenuItem>
       </NavigationMenuList>
       </NavigationMenu>
-      <div className="flex items-center justify-between w-20">
-          <ModeToggle />
-          <Link href={'/rss'}>
+      <div className="flex items-center justify-between w-40 md:w-20 -ml-5 md:ml-0">
+          <span className="px-4 md:px-0">
+          <ModeToggle/>
+          </span>
+          <Link href={'/rss'} className="px-4 md:px-0">
               <Icons.rss />
           </Link>
       </div>

@@ -9,10 +9,10 @@ export default function LatestPosts() {
         return 1;
     })
     return(
-        <div className="font-custom text-[#3c4043]">
+        <div className="font-custom dark:text-white text-[#3c4043]">
             <h1 className="uppercase inline-block font-heading tracking-tight font-bold text-3xl lg:text-4xl underline underline-offset-4 decoration-gray-700 ">Recently Published</h1>
             {latestPosts.map((post)=> (
-                <article key={post.slug} className="text-wrap max-w-md my-10 border-b border-gray-400 dark:border-gray-700 border-opacity-30 pb-10 mr-5 ">
+                <article key={post.slug} className="text-wrap max-w-md my-10 border-b border-gray-400 dark:border-gray-700 border-opacity-30 pb-10 md:mr-5 ">
                     <Link href={`/blogs/${post.metadata.category}/${post.slug}`}>
                         <h3 className="font-bold text-lg py-2 leading-6 hover:text-blue-400">
                             {post.metadata.title}
