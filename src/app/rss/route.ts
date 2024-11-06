@@ -1,5 +1,5 @@
-import { getBlogPosts } from "../blogs/utils";
 import { baseUrl } from "../sitemap";
+import { getBlogPosts } from "../blogs/utils";
 
 export async function GET() {
     let allBlogs = getBlogPosts();
@@ -25,8 +25,7 @@ export async function GET() {
         </item>
     `).join("/n");
 
-    const rssFeed = `
-        <?xml version="1.0" encoding="UTF-8" ?>
+    const rssFeed = `<?xml version="1.0" encoding="UTF-8" ?>
             <rss version="2.0">
                 <channel>
                     <title>Ronin's Lore</title>
